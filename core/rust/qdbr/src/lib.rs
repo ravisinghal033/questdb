@@ -23,7 +23,7 @@
  *
  ******************************************************************************/
 
-pub extern crate jni;
+extern crate jni;
 
 use jni::sys::jlong;
 use jni::{objects::JClass, JNIEnv};
@@ -44,9 +44,9 @@ pub extern "system" fn Java_io_questdb_std_Os_initRust(_env: JNIEnv, _class: JCl
 pub extern "system" fn Java_io_questdb_std_Os_rustSmokeTest(
     _env: JNIEnv,
     _class: JClass,
-    a: i64,
-    b: i64,
-) -> i64 {
+    a: jlong,
+    b: jlong,
+) -> jlong {
     a + b
 }
 
